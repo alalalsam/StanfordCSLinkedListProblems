@@ -2,17 +2,20 @@
 #include <stdlib.h>
 
 
+// no memory leaks, probably. who's going to check?  >:)
+
+
 struct node {
     int data;
     struct node* next;
 };
 
 
-
-// problems
+// problems (in same order as pdf)
 int Count(struct node* head, int find);
 int GetNth(struct node* head, int index);
 struct node* DeleteList(struct node** headRef);
+int Pop(struct node** headRef);
 
 // basic utility
 int Length(struct node* head);
@@ -33,9 +36,11 @@ int main() {
 	ListValues(list);
 	printf("\n");
 	printf("%d %d %d %d", GetNth(list, 0), GetNth(list, 1), GetNth(list, 2), GetNth(list, 3));
-	GetNth(list,4);
+	printf("\n %d \n", Pop(&list));
+	ListValues(list);
     return 0;
 }
+
 
 
  /************************************************************************************
@@ -45,7 +50,6 @@ int main() {
 int Count(struct node* head, int find ){
 	int count = 0;
 	struct node* current;
-	
 	for(current = head; current != NULL; current = current->next){
 		if(current->data == find){
 			count++;
@@ -74,6 +78,19 @@ struct node* DeleteList(struct node** headRef){
 	}
 	return *headRef;
 }
+
+
+// pop
+int Pop(struct node** headRef){
+    if(*headRef == NULL){printf("\n Pop failed-head is NULL\n"); return 0;}
+	struct node* current = *headRef;
+	int out = current->data;
+	*headRef = current->next;
+	free(current);		
+	return out;
+}
+
+
 	
 	
 	
