@@ -1,6 +1,6 @@
 # StanfordCSLinkedListProblems
 Solutions to Nick Parlante's LinkedListProblems pdf. go here: http://cslibrary.stanford.edu/ 
 
-Now that I have a job, the code I write has to balance conciseness, understandability, and functionality. Unfortunately, this means I'm spending more time than ever before considering the semantics of what i write, instead of just shitting out code. How sickening. I'm not gonna do that here.
+Now that I have a job, the code I write has to balance conciseness, understandability, and functionality. Unfortunately, this means I'm spending more time than ever before considering the semantics of what i write, instead of just shitting out code. How sickening.
 
-for clarity (lol) I'm implementing all the solutions to the Linked List problems in one long .c file where I just change main.c depending on which solution I want to test, and I'm too lazy to set up an extension for c on visual studio so i'm using notepad++ and copypasting the entire file into an online c compiler. 
+i tried to solve the linked list problems with the most concise pointer-oriented trickery as possible, to prove to myself I know how to use pointers properly. This makes the code very cryptic. IDK why anyone would use malloc and pointer-based data structures when they can just use arrays. real life code should never look like this.
